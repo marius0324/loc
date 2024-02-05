@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+  <h1>Добро пожаловать на наш сайт!</h1>
+  <p>Здесь вы найдете информацию о наших товарах и услугах.</p>
+
+  {% for product in products %}
+    <div>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
