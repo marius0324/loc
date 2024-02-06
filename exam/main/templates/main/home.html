@@ -9,7 +9,7 @@
         <h2>{{ product.name }}</h2>
         <p>{{ product.description }}</p>
         {% if product.image %}
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="250px" height="150px">
         {% endif %}
     </div>
 {% endfor %}
